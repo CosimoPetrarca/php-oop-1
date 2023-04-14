@@ -1,25 +1,15 @@
 <?php
 
-// definizione della classe 'Movie'
-class Movie {
-    // variabili d'istanza
-    public $titolo;
-    public $anno;
-    public $regista;
-    
+// includo il file che contiene la definizione della classe Movie
+require_once('Movie.php');
 
-    // definisco un costruttore
-    public function __construct($titolo, $anno, $regista) {
-        $this->titolo = $titolo;
-        $this->anno = $anno;
-        $this->regista = $regista;
-        
-    }
+$movie1 = new Movie("LaCapaGira", 1999, "Alessandro Piva");
+$movie2 = new Movie("Così fan tutte", 1992, "Tinto Brass");
+$movie3 = new Movie("Per un pugno di dollari", 1964, "Sergio Leone");
 
-    // definisco un metodo
-    public function informazioni() {
-        return "Sotto la regia di {$this->regista} nel {$this->anno} esce il capolavoro '{$this->titolo}'.";
-    }
-}
+// stampo a schermo dei valori delle relative proprietà
+echo $movie1->informazioni() . "<br>";
+echo $movie2->informazioni() . "<br>";
+echo $movie3->informazioni() . "<br>";
 
 ?>
